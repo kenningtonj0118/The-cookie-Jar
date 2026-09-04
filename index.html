@@ -4,592 +4,1278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fresh Homemade Cookies 🍪</title>
+  <meta
+    name="description"
+    content="Fresh homemade cookies available in oatmeal raisin, chocolate chip, white chocolate, butterscotch chip, and sugar."
+  >
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+    :root {
+      --brown-dark: #3a2118;
+      --brown: #6b3d28;
+      --brown-light: #9a5b3b;
+      --cream: #fff8ed;
+      --cream-dark: #f8ead8;
+      --white: #ffffff;
+      --green: #22c55e;
+      --green-dark: #16803d;
+      --purple: #6d4aff;
+      --text: #43291f;
+      --muted: #80675b;
+      --border: #ead7c5;
+      --shadow: 0 15px 40px rgba(76, 42, 25, 0.12);
+    }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #fff8ef;
-      color: #4a2c20;
-      line-height: 1.5;
+      font-family: "DM Sans", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    header {
-      background: #8b4a2f;
-      color: white;
-      text-align: center;
-      padding: 65px 20px;
+    /* =========================
+       NAVIGATION
+    ========================= */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 248, 237, 0.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(234, 215, 197, 0.8);
     }
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 12px;
-    }
-    header p {
-      font-size: 20px;
-    }
-    .section {
-      max-width: 1100px;
+    .nav-container {
+      max-width: 1200px;
       margin: auto;
-      padding: 55px 20px;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--brown-dark);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--brown-light);
+    }
+    .nav-order {
+      background: var(--brown-dark);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 100px;
+    }
+    .nav-order:hover {
+      background: var(--brown) !important;
+    }
+    /* =========================
+       HERO
+    ========================= */
+    .hero {
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,.65), transparent 25%),
+        radial-gradient(circle at 15% 80%, rgba(255,214,174,.55), transparent 30%),
+        linear-gradient(135deg, #f9e2ca, #fff8ed 55%, #f4d8bc);
+    }
+    .hero::before {
+      content: "🍪";
+      position: absolute;
+      font-size: 230px;
+      right: 4%;
+      top: 15%;
+      opacity: .14;
+      transform: rotate(15deg);
+    }
+    .hero::after {
+      content: "🍪";
+      position: absolute;
+      font-size: 130px;
+      left: 3%;
+      bottom: 8%;
+      opacity: .12;
+      transform: rotate(-20deg);
+    }
+    .hero-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brown);
+      box-shadow: 0 8px 20px rgba(70, 40, 20, .08);
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(50px, 8vw, 86px);
+      line-height: 1;
+      letter-spacing: -3px;
+      color: var(--brown-dark);
+      margin-bottom: 25px;
+    }
+    .hero h1 span {
+      color: var(--brown-light);
+    }
+    .hero p {
+      max-width: 600px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: 100px;
+      font-weight: 700;
+      transition: .25s;
+    }
+    .button-primary {
+      background: var(--brown-dark);
+      color: white;
+      box-shadow: 0 10px 25px rgba(58,33,24,.2);
+    }
+    .button-primary:hover {
+      transform: translateY(-3px);
+      background: var(--brown);
+      box-shadow: 0 15px 30px rgba(58,33,24,.25);
+    }
+    .button-secondary {
+      background: white;
+      color: var(--brown-dark);
+      border: 1px solid var(--border);
+    }
+    .button-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brown-light);
+      margin-bottom: 10px;
     }
     .section h2 {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 30px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 5vw, 52px);
+      color: var(--brown-dark);
+      line-height: 1.15;
+      margin-bottom: 15px;
     }
-    /* COOKIE FLAVORS */
-    .cookies {
+    .section-header p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+    /* =========================
+       FLAVORS
+    ========================= */
+    .flavor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
     }
-    .cookie-card {
+    .flavor-card {
       background: white;
-      border-radius: 18px;
-      padding: 28px 20px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 25px rgba(75, 42, 25, .06);
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
     }
-    .cookie-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    .flavor-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--brown-light);
+      transform: scaleX(0);
+      transition: .3s;
     }
-    .cookie-icon {
-      font-size: 55px;
-      margin-bottom: 10px;
+    .flavor-card:hover {
+      transform: translateY(-9px);
+      box-shadow: var(--shadow);
     }
-    .cookie-card h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
+    .flavor-card:hover::before {
+      transform: scaleX(1);
     }
-    .cookie-card p {
-      color: #765548;
-    }
-    /* COOKIE SHAPES */
-    .shapes {
+    .flavor-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
+      background: var(--cream-dark);
+      font-size: 45px;
     }
-    .shape {
+    .flavor-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+    .flavor-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    /* =========================
+       SHAPES
+    ========================= */
+    .shapes-section {
+      background: #f4e4d2;
+      max-width: none;
+    }
+    .shape-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+    .shape-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .shape-card {
       background: white;
-      border: 2px solid #e5b89c;
-      border-radius: 15px;
-      padding: 28px 35px;
+      border-radius: 28px;
+      padding: 45px 25px;
       text-align: center;
-      min-width: 200px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+      transition: .3s;
+      box-shadow: 0 10px 30px rgba(75, 42, 25, .07);
     }
-    .shape-icon {
-      font-size: 48px;
-      margin-bottom: 10px;
+    .shape-card:hover {
+      transform: translateY(-8px);
+      border-color: #d7a47e;
     }
-    .shape h3 {
-      margin-bottom: 5px;
+    .shape-emoji {
+      font-size: 75px;
+      margin-bottom: 15px;
+      display: block;
     }
-    /* PRICING */
-    .pricing {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .shape-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      margin-bottom: 7px;
+    }
+    .shape-card p {
+      color: var(--muted);
+    }
+    /* =========================
+       PRICING
+    ========================= */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 750px;
+      margin: auto;
       gap: 25px;
     }
     .price-card {
       background: white;
-      border-radius: 20px;
-      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 40px;
       text-align: center;
-      width: 280px;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-      border: 2px solid #f0d1bd;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: .3s;
+    }
+    .price-card:hover {
+      transform: translateY(-7px);
+    }
+    .price-card.featured {
+      border: 2px solid var(--brown-light);
+    }
+    .popular {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--brown-dark);
+      color: white;
+      padding: 7px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .price-card.featured .price-content {
+      padding-top: 20px;
     }
     .price-card h3 {
-      font-size: 25px;
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      margin-bottom: 10px;
     }
     .price {
-      font-size: 42px;
-      font-weight: bold;
-      color: #8b4a2f;
-      margin: 12px 0;
+      font-family: "Playfair Display", serif;
+      font-size: 60px;
+      font-weight: 800;
+      color: var(--brown-light);
+      line-height: 1;
+      margin: 15px 0;
     }
-    .shipping {
+    .price-card p {
+      color: var(--muted);
+    }
+    .price-note {
       text-align: center;
       margin-top: 25px;
-      font-size: 18px;
+      color: var(--muted);
+      font-size: 15px;
     }
-    /* PAYMENT */
-    .payment {
-      background: #2f9e44;
+    /* =========================
+       PAYMENT
+    ========================= */
+    .payment-section {
+      background:
+        radial-gradient(circle at 10% 30%, rgba(255,255,255,.1), transparent 25%),
+        radial-gradient(circle at 90% 70%, rgba(255,255,255,.1), transparent 25%),
+        #352019;
       color: white;
+      padding: 100px 25px;
+    }
+    .payment-container {
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
-      padding: 50px 20px;
     }
-    .payment h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
+    .payment-container .eyebrow {
+      color: #e9b48d;
     }
-    .payment p {
-      font-size: 19px;
-      margin: 8px 0;
+    .payment-container h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 55px);
+      margin-bottom: 15px;
     }
-    .cashapp {
+    .payment-container > p {
+      color: #d8c3b8;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .payment-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 25px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      transition: .3s;
+    }
+    .payment-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,.12);
+    }
+    .payment-logo {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+    .payment-card h3 {
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+    .payment-handle {
       display: inline-block;
-      margin-top: 20px;
       background: white;
-      color: #2f9e44;
-      padding: 15px 30px;
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: bold;
+      color: var(--brown-dark);
+      padding: 10px 17px;
+      border-radius: 100px;
+      font-weight: 800;
+      margin-top: 8px;
     }
     .payment-warning {
-      max-width: 700px;
-      margin: 25px auto 0;
-      padding: 18px;
-      border: 2px solid white;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
+      max-width: 760px;
+      margin: 35px auto 0;
+      padding: 20px;
+      background: rgba(255, 185, 75, .12);
+      border: 1px solid rgba(255, 185, 75, .3);
+      border-radius: 18px;
+      color: #f9dec6;
+      font-size: 15px;
     }
-    /* ORDER FORM */
-    .order {
-      max-width: 780px;
+    /* =========================
+       ORDER FORM
+    ========================= */
+    .order-section {
+      background: #fffdf9;
+    }
+    .order-container {
+      max-width: 850px;
       margin: auto;
-      padding: 55px 20px;
-    }
-    .order h2 {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-    .order-intro {
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #765548;
     }
     .order-form {
       background: white;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 45px;
+      box-shadow: var(--shadow);
+    }
+    .form-title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: var(--brown-dark);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
     .form-group {
       margin-bottom: 20px;
     }
     label {
       display: block;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 7px;
+      font-size: 14px;
+    }
+    .required {
+      color: #d32f2f;
     }
     input,
     select,
     textarea {
       width: 100%;
-      padding: 13px;
-      border: 1px solid #d8b29d;
-      border-radius: 8px;
-      font: inherit;
-      color: #4a2c20;
-      background: #fffdf9;
+      padding: 14px 15px;
+      border: 1px solid #dcc7b6;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--text);
+      background: #fffdfb;
       outline: none;
+      transition: .2s;
     }
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: #8b4a2f;
-      box-shadow: 0 0 0 2px rgba(139, 74, 47, 0.12);
+      border-color: var(--brown-light);
+      box-shadow: 0 0 0 4px rgba(154,91,59,.1);
     }
     textarea {
-      min-height: 110px;
+      min-height: 120px;
       resize: vertical;
     }
-    .required {
-      color: #b42318;
-    }
     .form-note {
-      color: #765548;
-      font-size: 14px;
+      font-size: 12px;
+      color: var(--muted);
       margin-top: 5px;
     }
     .submit-button {
       width: 100%;
       border: none;
-      border-radius: 10px;
-      padding: 16px;
-      background: #8b4a2f;
+      border-radius: 100px;
+      padding: 17px;
+      background: var(--brown-dark);
       color: white;
-      font-size: 19px;
-      font-weight: bold;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 800;
       cursor: pointer;
+      transition: .25s;
       margin-top: 5px;
-      transition: background 0.2s, transform 0.2s;
     }
     .submit-button:hover {
-      background: #6f3825;
+      background: var(--brown);
       transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(58,33,24,.2);
     }
     .form-disclaimer {
       text-align: center;
-      color: #765548;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-top: 16px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 17px;
     }
-    /* FOOTER */
+    /* =========================
+       INFO STRIP
+    ========================= */
+    .info-strip {
+      background: var(--brown-light);
+      color: white;
+      padding: 25px;
+    }
+    .info-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .info-item {
+      padding: 10px;
+    }
+    .info-item span {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 3px;
+    }
+    .info-item strong {
+      display: block;
+      font-size: 15px;
+    }
+    .info-item small {
+      color: #f9dfcc;
+    }
+    /* =========================
+       FOOTER
+    ========================= */
     footer {
-      background: #4a2c20;
+      background: var(--brown-dark);
       color: white;
       text-align: center;
-      padding: 25px 20px;
+      padding: 40px 20px;
+    }
+    footer .footer-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 8px;
     }
     footer p {
-      margin: 5px 0;
+      color: #cdb8ad;
+      font-size: 13px;
     }
-    /* MOBILE */
-    @media (max-width: 600px) {
-      header {
-        padding: 50px 20px;
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 950px) {
+      .flavor-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
-      header h1 {
-        font-size: 36px;
+      .hero {
+        min-height: 620px;
       }
-      header p {
+    }
+    @media (max-width: 700px) {
+      .nav-container {
+        padding: 13px 17px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .logo {
+        font-size: 21px;
+      }
+      .hero {
+        min-height: 620px;
+      }
+      .hero-container {
+        padding: 70px 20px;
+      }
+      .hero h1 {
+        font-size: 53px;
+        letter-spacing: -2px;
+      }
+      .hero p {
         font-size: 17px;
       }
-      .section {
-        padding: 40px 15px;
+      .hero::before {
+        font-size: 150px;
+        right: -30px;
+        top: 10%;
       }
-      .section h2 {
-        font-size: 29px;
+      .section,
+      .shape-container {
+        padding: 70px 18px;
       }
-      .order {
-        padding: 40px 15px;
+      .flavor-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .shape-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
       .order-form {
-        padding: 22px;
+        padding: 25px 20px;
       }
-      .price-card {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+    @media (max-width: 420px) {
+      .flavor-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 45px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .button {
         width: 100%;
-        max-width: 320px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1>🍪 Fresh Homemade Cookies 🍪</h1>
-    <p>Pick your favorite flavor, shape, and quantity!</p>
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        🍪 Cookie Shop
+      </a>
+      <ul class="nav-links">
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#shapes">Shapes</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#payment">Payment</a></li>
+        <li>
+          <a href="#order" class="nav-order">
+            Order Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- =========================
+       HERO
+  ========================= -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          🍪 Fresh • Homemade • Made to Order
+        </div>
+        <h1>
+          Cookies made<br>
+          <span>just for you.</span>
+        </h1>
+        <p>
+          Choose your favorite flavor, pick a fun shape,
+          and get a box of delicious homemade cookies made
+          especially for your order.
+        </p>
+        <div class="hero-buttons">
+          <a href="#order" class="button button-primary">
+            🍪 Order Cookies
+          </a>
+          <a href="#flavors" class="button button-secondary">
+            Explore Flavors →
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
-  <!-- COOKIE FLAVORS -->
-  <section class="section">
-    <h2>🍪 Our Cookie Flavors</h2>
-    <div class="cookies">
-      <div class="cookie-card">
-        <div class="cookie-icon">🍪</div>
-        <h3>Oatmeal Raisin</h3>
-        <p>A classic soft and chewy favorite.</p>
+  <!-- =========================
+       INFO STRIP
+  ========================= -->
+  <section class="info-strip">
+    <div class="info-grid">
+      <div class="info-item">
+        <span>🍪</span>
+        <strong>5 Delicious Flavors</strong>
+        <small>Something for everyone</small>
       </div>
-      <div class="cookie-card">
-        <div class="cookie-icon">🍫</div>
-        <h3>Chocolate Chip</h3>
-        <p>Classic cookies packed with chocolate chips.</p>
+      <div class="info-item">
+        <span>✨</span>
+        <strong>3 Cookie Shapes</strong>
+        <small>Make your order unique</small>
       </div>
-      <div class="cookie-card">
-        <div class="cookie-icon">🤍</div>
-        <h3>White Chocolate</h3>
-        <p>Sweet and creamy white chocolate goodness.</p>
-      </div>
-      <div class="cookie-card">
-        <div class="cookie-icon">🍯</div>
-        <h3>Butterscotch Chip</h3>
-        <p>Rich, buttery cookies with butterscotch chips.</p>
-      </div>
-      <div class="cookie-card">
-        <div class="cookie-icon">🍪</div>
-        <h3>Sugar</h3>
-        <p>Simple, sweet, and delicious.</p>
+      <div class="info-item">
+        <span>📦</span>
+        <strong>12 or 24 Cookies</strong>
+        <small>Shipping available</small>
       </div>
     </div>
   </section>
-  <!-- COOKIE SHAPES -->
-  <section class="section">
-    <h2>✨ Choose Your Shape</h2>
-    <div class="shapes">
-      <div class="shape">
-        <div class="shape-icon">🦖</div>
-        <h3>Dino Shape</h3>
-        <p>Fun dinosaur-shaped cookies!</p>
+  <!-- =========================
+       FLAVORS
+  ========================= -->
+  <section class="section" id="flavors">
+    <div class="section-header">
+      <div class="eyebrow">
+        Our Menu
       </div>
-      <div class="shape">
-        <div class="shape-icon">🎀</div>
-        <h3>Bow Shape</h3>
-        <p>Cute bow-shaped cookies!</p>
-      </div>
-      <div class="shape">
-        <div class="shape-icon">🍪</div>
-        <h3>Classic Round</h3>
-        <p>The traditional cookie shape.</p>
-      </div>
+      <h2>
+        Pick your perfect flavor.
+      </h2>
+      <p>
+        From classic chocolate chip to sweet butterscotch,
+        there's a cookie waiting for you.
+      </p>
     </div>
-  </section>
-  <!-- PRICING -->
-  <section class="section">
-    <h2>💰 Cookie Boxes</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h3>12 Cookies</h3>
-        <div class="price">$20</div>
-        <p>Choose your favorite flavor and shape.</p>
-      </div>
-      <div class="price-card">
-        <h3>24 Cookies</h3>
-        <div class="price">$35</div>
-        <p>Choose your favorite flavor and shape.</p>
-      </div>
-    </div>
-    <p class="shipping">
-      📦 <strong>Shipping is additional</strong> and is not included in the prices above.
-    </p>
-  </section>
-  <!-- PAYMENT -->
-  <section class="payment">
-    <h2>💚 Payment</h2>
-    <p>
-      We currently accept <strong>Cash App ONLY.</strong>
-    </p>
-    <div class="cashapp">
-      💵 Cash App: $TeighlorElisabeth
-    </div>
-    <div class="payment-warning">
-      ⚠️ Please do not send payment when you submit your order.
-      Wait until you receive an email confirming your order,
-      shipping cost, total price, and when to pay.
-    </div>
-  </section>
-  <!-- ORDER FORM -->
-  <section class="order">
-    <h2>📝 Place Your Order</h2>
-    <p class="order-intro">
-      Fill out the form below to request your cookie order.
-      Your order will be sent to us for review.
-      We will contact you to confirm your order and shipping cost.
-    </p>
-    <!-- FORMSUBMIT -->
-    <form
-      class="order-form"
-      action="https://formsubmit.co/Teighlorelisabeth2004@gmail.com"
-      method="POST"
-    >
-      <!-- FormSubmit email subject -->
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Cookie Order Request"
-      >
-      <!-- FormSubmit email template -->
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-      <!-- FormSubmit spam protection -->
-      <input
-        type="hidden"
-        name="_captcha"
-        value="true"
-      >
-      <!-- FULL NAME -->
-      <div class="form-group">
-        <label for="name">
-          Full Name <span class="required">*</span>
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your full name"
-          autocomplete="name"
-          required
-        >
-      </div>
-      <!-- EMAIL -->
-      <div class="form-group">
-        <label for="email">
-          Email Address <span class="required">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="you@example.com"
-          autocomplete="email"
-          required
-        >
-      </div>
-      <!-- PHONE -->
-      <div class="form-group">
-        <label for="phone">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="Enter your phone number"
-          autocomplete="tel"
-        >
-        <p class="form-note">
-          Optional — provide this if you would like to be contacted by text.
+    <div class="flavor-grid">
+      <div class="flavor-card">
+        <div class="flavor-icon">
+          🍪
+        </div>
+        <h3>
+          Oatmeal Raisin
+        </h3>
+        <p>
+          Soft, chewy, and packed with classic oatmeal raisin flavor.
         </p>
       </div>
-      <!-- COOKIE BOX -->
-      <div class="form-group">
-        <label for="box">
-          Cookie Box <span class="required">*</span>
-        </label>
-        <select
-          id="box"
-          name="cookie_box"
-          required
-        >
-          <option value="">
-            Select a box size
-          </option>
-          <option value="12 Cookies - $20">
-            12 Cookies - $20
-          </option>
-          <option value="24 Cookies - $35">
-            24 Cookies - $35
-          </option>
-        </select>
+      <div class="flavor-card">
+        <div class="flavor-icon">
+          🍫
+        </div>
+        <h3>
+          Chocolate Chip
+        </h3>
+        <p>
+          A timeless favorite loaded with delicious chocolate chips.
+        </p>
       </div>
-      <!-- FLAVOR -->
-      <div class="form-group">
-        <label for="flavor">
-          Cookie Flavor <span class="required">*</span>
-        </label>
-        <select
-          id="flavor"
-          name="cookie_flavor"
-          required
-        >
-          <option value="">
-            Select a flavor
-          </option>
-          <option value="Oatmeal Raisin">
-            Oatmeal Raisin
-          </option>
-          <option value="Chocolate Chip">
-            Chocolate Chip
-          </option>
-          <option value="White Chocolate">
-            White Chocolate
-          </option>
-          <option value="Butterscotch Chip">
-            Butterscotch Chip
-          </option>
-          <option value="Sugar">
-            Sugar
-          </option>
-        </select>
+      <div class="flavor-card">
+        <div class="flavor-icon">
+          🤍
+        </div>
+        <h3>
+          White Chocolate
+        </h3>
+        <p>
+          Sweet, creamy white chocolate in every bite.
+        </p>
       </div>
-      <!-- SHAPE -->
-      <div class="form-group">
-        <label for="shape">
-          Cookie Shape <span class="required">*</span>
-        </label>
-        <select
-          id="shape"
-          name="cookie_shape"
-          required
-        >
-          <option value="">
-            Select a shape
-          </option>
-          <option value="Dino Shape">
-            🦖 Dino Shape
-          </option>
-          <option value="Bow Shape">
-            🎀 Bow Shape
-          </option>
-          <option value="Classic Round">
-            🍪 Classic Round
-          </option>
-        </select>
+      <div class="flavor-card">
+        <div class="flavor-icon">
+          🍯
+        </div>
+        <h3>
+          Butterscotch Chip
+        </h3>
+        <p>
+          Rich and buttery cookies with sweet butterscotch chips.
+        </p>
       </div>
-      <!-- DELIVERY METHOD -->
-      <div class="form-group">
-        <label for="delivery">
-          Pickup or Shipping <span class="required">*</span>
-        </label>
-        <select
-          id="delivery"
-          name="delivery_method"
-          required
-        >
-          <option value="">
-            Select an option
-          </option>
-          <option value="Pickup">
-            Pickup
-          </option>
-          <option value="Shipping">
-            Shipping
-          </option>
-        </select>
+      <div class="flavor-card">
+        <div class="flavor-icon">
+          ✨
+        </div>
+        <h3>
+          Sugar
+        </h3>
+        <p>
+          Simple, sweet, soft, and delicious.
+        </p>
       </div>
-      <!-- SHIPPING ADDRESS -->
-      <div class="form-group">
-        <label for="address">
-          Shipping Address
-        </label>
-        <textarea
-          id="address"
-          name="shipping_address"
-          placeholder="Enter your shipping address if shipping is selected"
-        ></textarea>
-      </div>
-      <!-- ADDITIONAL NOTES -->
-      <div class="form-group">
-        <label for="notes">
-          Additional Notes
-        </label>
-        <textarea
-          id="notes"
-          name="additional_notes"
-          placeholder="Special requests or other order details"
-        ></textarea>
-      </div>
-      <!-- SUBMIT BUTTON -->
-      <button
-        class="submit-button"
-        type="submit"
-      >
-        🍪 Submit Order Request
-      </button>
-      <!-- DISCLAIMER -->
-      <p class="form-disclaimer">
-        This form sends an order request only.
-        <strong>Do not send payment yet.</strong>
-        Wait until your order is confirmed and you are instructed to pay.
-        Cash App is the only accepted payment method.
-        Shipping costs are additional.
-      </p>
-    </form>
+    </div>
   </section>
-  <!-- FOOTER -->
+  <!-- =========================
+       SHAPES
+  ========================= -->
+  <section class="shapes-section" id="shapes">
+    <div class="shape-container">
+      <div class="section-header">
+        <div class="eyebrow">
+          Make It Yours
+        </div>
+        <h2>
+          Choose your shape.
+        </h2>
+        <p>
+          Your cookies don't have to be ordinary.
+          Pick the shape that fits your style!
+        </p>
+      </div>
+      <div class="shape-grid">
+        <div class="shape-card">
+          <span class="shape-emoji">
+            🦖
+          </span>
+          <h3>
+            Dino Shape
+          </h3>
+          <p>
+            Roar! Fun dinosaur-shaped cookies
+            that are perfect for any occasion.
+          </p>
+        </div>
+        <div class="shape-card">
+          <span class="shape-emoji">
+            🎀
+          </span>
+          <h3>
+            Bow Shape
+          </h3>
+          <p>
+            Cute bow-shaped cookies for an
+            extra-special treat.
+          </p>
+        </div>
+        <div class="shape-card">
+          <span class="shape-emoji">
+            🍪
+          </span>
+          <h3>
+            Classic Round
+          </h3>
+          <p>
+            The classic cookie shape you know
+            and love.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================
+       PRICING
+  ========================= -->
+  <section class="section" id="pricing">
+    <div class="section-header">
+      <div class="eyebrow">
+        Simple Pricing
+      </div>
+      <h2>
+        Choose your box.
+      </h2>
+      <p>
+        Pick a size, choose your flavor and shape,
+        and you're ready to order.
+      </p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-content">
+          <h3>
+            12 Cookies
+          </h3>
+          <div class="price">
+            $20
+          </div>
+          <p>
+            A dozen delicious homemade cookies.
+          </p>
+        </div>
+      </div>
+      <div class="price-card featured">
+        <div class="popular">
+          Best Value
+        </div>
+        <div class="price-content">
+          <h3>
+            24 Cookies
+          </h3>
+          <div class="price">
+            $35
+          </div>
+          <p>
+            Double the cookies for an even better value.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="price-note">
+      📦 Shipping costs are additional and are not included in the prices above.
+    </p>
+  </section>
+  <!-- =========================
+       PAYMENT
+  ========================= -->
+  <section class="payment-section" id="payment">
+    <div class="payment-container">
+      <div class="eyebrow">
+        Easy Payment
+      </div>
+      <h2>
+        Pay your way.
+      </h2>
+      <p>
+        We currently accept Cash App and Venmo.
+      </p>
+      <div class="payment-options">
+        <!-- CASH APP -->
+        <div class="payment-card">
+          <div class="payment-logo">
+            💚
+          </div>
+          <h3>
+            Cash App
+          </h3>
+          <div class="payment-handle">
+            $TeighlorElisabeth
+          </div>
+        </div>
+        <!-- VENMO -->
+        <div class="payment-card">
+          <div class="payment-logo">
+            💙
+          </div>
+          <h3>
+            Venmo
+          </h3>
+          <div class="payment-handle">
+            @Teighlor-Elisabeth2004
+          </div>
+        </div>
+      </div>
+      <div class="payment-warning">
+        ⚠️ <strong>Important:</strong>
+        Please do not send payment when submitting your order.
+        Wait until your order has been reviewed and confirmed.
+        You will then receive an email or text with your final total,
+        shipping cost, and payment instructions.
+      </div>
+    </div>
+  </section>
+  <!-- =========================
+       ORDER FORM
+  ========================= -->
+  <section class="section order-section" id="order">
+    <div class="order-container">
+      <div class="section-header">
+        <div class="eyebrow">
+          Let's Get Your Order Started
+        </div>
+        <h2>
+          Place your order.
+        </h2>
+        <p>
+          Fill out the form below and we'll contact you
+          to confirm the details.
+        </p>
+      </div>
+      <!-- FORMSUBMIT -->
+      <form
+        class="order-form"
+        action="https://formsubmit.co/Teighlorelisabeth2004@gmail.com"
+        method="POST"
+      >
+        <!-- FormSubmit settings -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Cookie Order Request"
+        >
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+        <input
+          type="hidden"
+          name="_captcha"
+          value="true"
+        >
+        <div class="form-title">
+          🍪 Your Order Details
+        </div>
+        <!-- NAME + EMAIL -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">
+              Full Name <span class="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="email">
+              Email Address <span class="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
+        <!-- PHONE -->
+        <div class="form-group">
+          <label for="phone">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Optional phone number"
+            autocomplete="tel"
+          >
+          <p class="form-note">
+            Optional — provide this if you'd like to be contacted by text.
+          </p>
+        </div>
+        <!-- COOKIE BOX -->
+        <div class="form-group">
+          <label for="box">
+            Cookie Box <span class="required">*</span>
+          </label>
+          <select
+            id="box"
+            name="cookie_box"
+            required
+          >
+            <option value="">
+              Select your box
+            </option>
+            <option value="12 Cookies - $20">
+              12 Cookies — $20
+            </option>
+            <option value="24 Cookies - $35">
+              24 Cookies — $35
+            </option>
+          </select>
+        </div>
+        <!-- FLAVOR -->
+        <div class="form-group">
+          <label for="flavor">
+            Cookie Flavor <span class="required">*</span>
+          </label>
+          <select
+            id="flavor"
+            name="cookie_flavor"
+            required
+          >
+            <option value="">
+              Choose a flavor
+            </option>
+            <option value="Oatmeal Raisin">
+              Oatmeal Raisin
+            </option>
+            <option value="Chocolate Chip">
+              Chocolate Chip
+            </option>
+            <option value="White Chocolate">
+              White Chocolate
+            </option>
+            <option value="Butterscotch Chip">
+              Butterscotch Chip
+            </option>
+            <option value="Sugar">
+              Sugar
+            </option>
+          </select>
+        </div>
+        <!-- SHAPE -->
+        <div class="form-group">
+          <label for="shape">
+            Cookie Shape <span class="required">*</span>
+          </label>
+          <select
+            id="shape"
+            name="cookie_shape"
+            required
+          >
+            <option value="">
+              Choose a shape
+            </option>
+            <option value="Dino Shape">
+              🦖 Dino Shape
+            </option>
+            <option value="Bow Shape">
+              🎀 Bow Shape
+            </option>
+            <option value="Classic Round">
+              🍪 Classic Round
+            </option>
+          </select>
+        </div>
+        <!-- PAYMENT -->
+        <div class="form-group">
+          <label for="payment_method">
+            Preferred Payment Method <span class="required">*</span>
+          </label>
+          <select
+            id="payment_method"
+            name="payment_method"
+            required
+          >
+            <option value="">
+              Choose payment method
+            </option>
+            <option value="Cash App">
+              💚 Cash App
+            </option>
+            <option value="Venmo">
+              💙 Venmo
+            </option>
+          </select>
+        </div>
+        <!-- DELIVERY -->
+        <div class="form-group">
+          <label for="delivery">
+            Pickup or Shipping <span class="required">*</span>
+          </label>
+          <select
+            id="delivery"
+            name="delivery_method"
+            required
+          >
+            <option value="">
+              Choose an option
+            </option>
+            <option value="Pickup">
+              📍 Pickup
+            </option>
+            <option value="Shipping">
+              📦 Shipping
+            </option>
+          </select>
+        </div>
+        <!-- SHIPPING ADDRESS -->
+        <div class="form-group">
+          <label for="address">
+            Shipping Address
+          </label>
+          <textarea
+            id="address"
+            name="shipping_address"
+            placeholder="Enter your shipping address if you selected shipping"
+          ></textarea>
+        </div>
+        <!-- NOTES -->
+        <div class="form-group">
+          <label for="notes">
+            Additional Notes
+          </label>
+          <textarea
+            id="notes"
+            name="additional_notes"
+            placeholder="Special requests or other order details..."
+          ></textarea>
+        </div>
+        <!-- SUBMIT -->
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          🍪 Submit My Order Request
+        </button>
+        <p class="form-disclaimer">
+          By submitting this form, you are sending an order request.
+          This does not automatically charge you.
+          Please wait for confirmation before sending payment.
+          Shipping costs are additional.
+        </p>
+      </form>
+    </div>
+  </section>
+  <!-- =========================
+       FOOTER
+  ========================= -->
   <footer>
-    <p>🍪 Fresh Homemade Cookies</p>
+    <div class="footer-logo">
+      🍪 Fresh Homemade Cookies
+    </div>
     <p>
-      © 2026 Cookie Shop • Made with love ❤️
+      Delicious cookies. Fun shapes. Made to order.
+    </p>
+    <p style="margin-top: 10px;">
+      © 2026 Cookie Shop • All rights reserved.
     </p>
   </footer>
+  <!-- =========================
+       SMALL JAVASCRIPT
+  ========================= -->
+  <script>
+    const delivery = document.getElementById("delivery");
+    const address = document.getElementById("address");
+    function updateAddress() {
+      if (delivery.value === "Shipping") {
+        address.required = true;
+        address.placeholder =
+          "Enter your complete shipping address";
+      } else {
+        address.required = false;
+        address.placeholder =
+          "Enter your shipping address if you selected shipping";
+      }
+    }
+    delivery.addEventListener("change", updateAddress);
+    updateAddress();
+  </script>
 </body>
 </html>
