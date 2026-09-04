@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Shop 🍪</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8ef;
+      color: #4a2c20;
+    }
+    header {
+      background: #8b4a2f;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 20px;
+    }
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+    .cookies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .cookie-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+    .cookie-card:hover {
+      transform: translateY(-5px);
+    }
+    .cookie-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+    .cookie-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .cookie-card p {
+      color: #765548;
+    }
+    .shapes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .shape {
+      background: #fff;
+      border: 2px solid #e5b89c;
+      border-radius: 15px;
+      padding: 25px 35px;
+      text-align: center;
+      min-width: 180px;
+    }
+    .shape-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .price-card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    }
+    .price-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 40px;
+      font-weight: bold;
+      color: #8b4a2f;
+      margin: 15px 0;
+    }
+    .shipping {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 18px;
+    }
+    .payment {
+      background: #2f9e44;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+    .payment h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+    .payment p {
+      font-size: 20px;
+      margin: 8px 0;
+    }
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .payment-method {
+      display: inline-block;
+      background: white;
+      color: #2f9e44;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 21px;
+      font-weight: bold;
+    }
+    .payment-warning {
+      max-width: 700px;
+      margin: 25px auto 0;
+      padding: 18px;
+      border: 2px solid white;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .order {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    .order h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .order-intro {
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    .order-form {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d8b29d;
+      border-radius: 8px;
+      font: inherit;
+      color: #4a2c20;
+      background: #fffdf9;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .required {
+      color: #b42318;
+    }
+    .form-note {
+      color: #765548;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .submit-button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      background: #8b4a2f;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .submit-button:hover {
+      background: #6f3825;
+    }
+    .form-disclaimer {
+      text-align: center;
+      color: #765548;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 15px;
+    }
+    .confirmation-message {
+      display: none;
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #e8f7ec;
+      border: 2px solid #2f9e44;
+      color: #205c2d;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    footer {
+      background: #4a2c20;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 36px;
+      }
+      header p {
+        font-size: 17px;
+      }
+      .order-form {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍪 Fresh Homemade Cookies 🍪</h1>
+    <p>Pick your favorite flavor, shape, and quantity!</p>
+  </header>
+  <section class="section">
+    <h2>Our Cookie Flavors</h2>
+<div class="cookies">
+  <div class="cookie-card">
+    <div class="cookie-icon">🍪</div>
+    <h3>Oatmeal Raisin</h3>
+    <p>A classic soft and chewy favorite.</p>
+  </div>
+  <div class="cookie-card">
+    <div class="cookie-icon">🍫</div>
+    <h3>Chocolate Chip</h3>
+    <p>Classic cookies packed with chocolate chips.</p>
+  </div>
+  <div class="cookie-card">
+    <div class="cookie-icon">🤍</div>
+    <h3>White Chocolate</h3>
+    <p>Sweet and creamy white chocolate goodness.</p>
+  </div>
+  <div class="cookie-card">
+    <div class="cookie-icon">🍯</div>
+    <h3>Butterscotch Chip</h3>
+    <p>Rich, buttery cookies with butterscotch chips.</p>
+  </div>
+  <div class="cookie-card">
+    <div class="cookie-icon">🍪</div>
+    <h3>Sugar</h3>
+    <p>Simple, sweet, and delicious.</p>
+  </div>
+</div>
+  </section>
+  <section class="section">
+    <h2>Choose Your Shape</h2>
+<div class="shapes">
+  <div class="shape">
+    <div class="shape-icon">🦖</div>
+    <h3>Dino Shape</h3>
+    <p>Fun dinosaur-shaped cookies!</p>
+  </div>
+  <div class="shape">
+    <div class="shape-icon">🎀</div>
+    <h3>Bow Shape</h3>
+    <p>Cute bow-shaped cookies!</p>
+  </div>
+  <div class="shape">
+    <div class="shape-icon">🍪</div>
+    <h3>Classic Round</h3>
+    <p>The traditional cookie shape.</p>
+  </div>
+</div>
+  </section>
+  <section class="section">
+    <h2>Cookie Boxes</h2>
+<div class="pricing">
+  <div class="price-card">
+    <h3>12 Cookies</h3>
+    <div class="price">$20</div>
+    <p>Choose your flavor and shape.</p>
+  </div>
+  <div class="price-card">
+    <h3>24 Cookies</h3>
+    <div class="price">$35</div>
+    <p>Choose your flavor and shape.</p>
+  </div>
+</div>
+<p class="shipping">
+  📦 Shipping is additional and is not included in the prices above.
+</p>
+  </section>
+  <section class="payment">
+    <h2>💚 Payment Options</h2>
+    <p>We accept Cash App and Venmo.</p>
+<div class="payment-warning">
+  ⚠️ Please do not send payment when you submit your order form.
+  Wait until you receive an email or text message from me confirming your order and telling you when to pay.
+</div>
+<div class="payment-methods">
+  <div class="payment-method">💵 Cash App: $TeighlorElisabeth</div>
+  <div class="payment-method">💳 Venmo: @Teighlor-Elisabeth2004</div>
+</div>
+  </section>
+  <section class="order">
+    <h2>🍪 Place Your Order</h2>
+<p class="order-intro">
+  Complete the form below with your contact information and order details.
+  Your order will be sent to Teighlorelisabeth2004@gmail.com.
+  After I review your request, I will contact you by email or text to confirm availability,
+  shipping costs, your total, and when payment should be sent.
+</p>
+<form
+  class="order-form"
+  id="orderForm"
+  action="https://formsubmit.co/Teighlorelisabeth2004@gmail.com"
+  method="POST"
+>
+  <input type="hidden" name="_subject" value="New Cookie Order Request">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="_next" value="https://example.com/thank-you.html">
+  <div class="form-group">
+    <label for="name">
+      Full Name <span class="required">*</span>
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="Full Name"
+      placeholder="Enter your full name"
+      autocomplete="name"
+      required
+    >
+  </div>
+  <div class="form-group">
+    <label for="email">
+      Email Address <span class="required">*</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="Email Address"
+      placeholder="you@example.com"
+      autocomplete="email"
+      required
+    >
+  </div>
+  <div class="form-group">
+    <label for="phone">
+      Phone Number
+    </label>
+    <input
+      type="tel"
+      id="phone"
+      name="Phone Number"
+      placeholder="Enter your phone number"
+      autocomplete="tel"
+    >
+    <p class="form-note">Provide a phone number if you would like to receive your confirmation by text.</p>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">
+      Preferred Confirmation Method <span class="required">*</span>
+    </label>
+    <select id="contactMethod" name="Preferred Confirmation Method" required>
+      <option value="">Select a confirmation method</option>
+      <option value="Email">Email</option>
+      <option value="Text Message">Text Message</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="box">
+      Cookie Box <span class="required">*</span>
+    </label>
+    <select id="box" name="Cookie Box" required>
+      <option value="">Select a box size</option>
+      <option value="12 Cookies - $20">12 Cookies - $20</option>
+      <option value="24 Cookies - $35">24 Cookies - $35</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="flavor">
+      Cookie Flavor <span class="required">*</span>
+    </label>
+    <select id="flavor" name="Cookie Flavor" required>
+      <option value="">Select a flavor</option>
+      <option value="Oatmeal Raisin">Oatmeal Raisin</option>
+      <option value="Chocolate Chip">Chocolate Chip</option>
+      <option value="White Chocolate">White Chocolate</option>
+      <option value="Butterscotch Chip">Butterscotch Chip</option>
+      <option value="Sugar">Sugar</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="shape">
+      Cookie Shape <span class="required">*</span>
+    </label>
+    <select id="shape" name="Cookie Shape" required>
+      <option value="">Select a shape</option>
+      <option value="Dino Shape">Dino Shape</option>
+      <option value="Bow Shape">Bow Shape</option>
+      <option value="Classic Round">Classic Round</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="payment">
+      Preferred Payment Method <span class="required">*</span>
+    </label>
+    <select id="payment" name="Preferred Payment Method" required>
+      <option value="">Select a payment method</option>
+      <option value="Cash App">Cash App</option>
+      <option value="Venmo">Venmo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="pickup">
+      Pickup or Shipping <span class="required">*</span>
+    </label>
+    <select id="pickup" name="Pickup or Shipping" required>
+      <option value="">Select an option</option>
+      <option value="Pickup">Pickup</option>
+      <option value="Shipping - shipping cost is additional">Shipping - shipping cost is additional</option>
+    </select>
+  </div>
+  <div class="form-group" id="addressGroup">
+    <label for="address">
+      Shipping Address
+    </label>
+    <textarea
+      id="address"
+      name="Shipping Address"
+      placeholder="Required if you selected shipping"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="date">
+      Preferred Pickup or Delivery Date
+    </label>
+    <input type="date" id="date" name="Preferred Date">
+  </div>
+  <div class="form-group">
+    <label for="notes">
+      Additional Notes
+    </label>
+    <textarea
+      id="notes"
+      name="Additional Notes"
+      placeholder="Add allergies, special requests, or other order details"
+    ></textarea>
+  </div>
+  <button class="submit-button" type="submit">
+    Send Order Request
+  </button>
+  <p class="form-disclaimer">
+    This form sends an order request only. Do not send payment yet.
+    Wait until you receive an email or text message from me confirming your order and instructing you to pay.
+    Prices do not include shipping.
+  </p>
+  <div class="confirmation-message" id="confirmationMessage" role="status">
+    Your order request is ready to send. Remember: do not pay until you receive an email or text message from me confirming your order.
+  </div>
+</form>
+  </section>
+  <footer>
+    <p>© 2026 Cookie Shop • Fresh Cookies Made to Order 🍪</p>
+  </footer>
+  <script>
+    const orderForm = document.getElementById("orderForm");
+    const pickupSelect = document.getElementById("pickup");
+    const addressField = document.getElementById("address");
+    const addressGroup = document.getElementById("addressGroup");
+    const phoneField = document.getElementById("phone");
+    const contactMethod = document.getElementById("contactMethod");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+    function updateShippingFields() {
+      const shippingSelected = pickupSelect.value.startsWith("Shipping");
+      addressField.required = shippingSelected;
+      addressGroup.style.display = shippingSelected ? "block" : "none";
+      if (!shippingSelected) {
+        addressField.value = "";
+      }
+    }
+    function updateContactFields() {
+      const textSelected = contactMethod.value === "Text Message";
+      phoneField.required = textSelected;
+      if (textSelected) {
+        phoneField.placeholder = "Required for text confirmation";
+      } else {
+        phoneField.placeholder = "Enter your phone number";
+      }
+    }
+    pickupSelect.addEventListener("change", updateShippingFields);
+    contactMethod.addEventListener("change", updateContactFields);
+    orderForm.addEventListener("submit", function(event) {
+      const phoneProvided = phoneField.value.trim() !== "";
+      const emailProvided = document.getElementById("email").value.trim() !== "";
+      if (!emailProvided && !phoneProvided) {
+        event.preventDefault();
+        alert("Please provide an email address or phone number so I can contact you.");
+        return;
+      }
+      if (contactMethod.value === "Text Message" && !phoneProvided) {
+        event.preventDefault();
+        alert("Please enter a phone number to receive a text confirmation.");
+        phoneField.focus();
+        return;
+      }
+      confirmationMessage.style.display = "block";
+    });
+    updateShippingFields();
+    updateContactFields();
+  </script>
+</body>
+</html>
