@@ -6,7 +6,7 @@
   <title>Fresh Homemade Cookies 🍪</title>
   <meta
     name="description"
-    content="Fresh homemade cookies available in oatmeal raisin, chocolate chip, white chocolate, butterscotch chip, sugar, and snickerdoodle."
+    content="Fresh homemade cookies available in oatmeal raisin, chocolate chip, white chocolate, butterscotch chip, sugar, snickerdoodle, and brownie."
   >
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
@@ -40,9 +40,6 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    /* =========================
-       NAVIGATION
-    ========================= */
     nav {
       position: sticky;
       top: 0;
@@ -90,9 +87,6 @@
     .nav-order:hover {
       background: var(--brown) !important;
     }
-    /* =========================
-       HERO
-    ========================= */
     .hero {
       min-height: 700px;
       position: relative;
@@ -198,9 +192,6 @@
       transform: translateY(-3px);
       box-shadow: var(--shadow);
     }
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
     .section {
       max-width: 1200px;
       margin: auto;
@@ -230,9 +221,6 @@
       color: var(--muted);
       font-size: 17px;
     }
-    /* =========================
-       FLAVORS
-    ========================= */
     .flavor-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -287,9 +275,6 @@
       color: var(--muted);
       font-size: 14px;
     }
-    /* =========================
-       SHAPES
-    ========================= */
     .shapes-section {
       background: #f4e4d2;
       max-width: none;
@@ -330,9 +315,6 @@
     .shape-card p {
       color: var(--muted);
     }
-    /* =========================
-       PRICING
-    ========================= */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -395,9 +377,6 @@
       color: var(--muted);
       font-size: 15px;
     }
-    /* =========================
-       PAYMENT
-    ========================= */
     .payment-section {
       background:
         radial-gradient(circle at 10% 30%, rgba(255,255,255,.1), transparent 25%),
@@ -470,9 +449,6 @@
       color: #f9dec6;
       font-size: 15px;
     }
-    /* =========================
-       ORDER FORM
-    ========================= */
     .order-section {
       background: #fffdf9;
     }
@@ -539,9 +515,6 @@
       color: var(--muted);
       margin-top: 5px;
     }
-    /* =========================
-       COOKIE PICKER
-    ========================= */
     .cookie-picker {
       background: #fffaf4;
       border: 1px solid var(--border);
@@ -744,9 +717,6 @@
       color: var(--muted);
       margin-top: 17px;
     }
-    /* =========================
-       INFO STRIP
-    ========================= */
     .info-strip {
       background: var(--brown-light);
       color: white;
@@ -775,9 +745,6 @@
     .info-item small {
       color: #f9dfcc;
     }
-    /* =========================
-       FOOTER
-    ========================= */
     footer {
       background: var(--brown-dark);
       color: white;
@@ -793,9 +760,6 @@
       color: #cdb8ad;
       font-size: 13px;
     }
-    /* =========================
-       RESPONSIVE
-    ========================= */
     @media (max-width: 950px) {
       .flavor-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -884,30 +848,20 @@
   </style>
 </head>
 <body>
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
   <nav>
     <div class="nav-container">
-      <a href="#" class="logo">
-        🍪 Cookie Shop
-      </a>
+      <a href="#" class="logo">🍪 Cookie Shop</a>
       <ul class="nav-links">
         <li><a href="#flavors">Flavors</a></li>
         <li><a href="#shapes">Shapes</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#payment">Payment</a></li>
         <li>
-          <a href="#order" class="nav-order">
-            Order Now
-          </a>
+          <a href="#order" class="nav-order">Order Now</a>
         </li>
       </ul>
     </div>
   </nav>
-  <!-- =========================
-       HERO
-  ========================= -->
   <header class="hero">
     <div class="hero-container">
       <div class="hero-content">
@@ -934,14 +888,11 @@
       </div>
     </div>
   </header>
-  <!-- =========================
-       INFO STRIP
-  ========================= -->
   <section class="info-strip">
     <div class="info-grid">
       <div class="info-item">
         <span>🍪</span>
-        <strong>6 Delicious Flavors</strong>
+        <strong>7 Delicious Flavors</strong>
         <small>Something for everyone</small>
       </div>
       <div class="info-item">
@@ -956,9 +907,6 @@
       </div>
     </div>
   </section>
-  <!-- =========================
-       FLAVORS
-  ========================= -->
   <section class="section" id="flavors">
     <div class="section-header">
       <div class="eyebrow">
@@ -968,83 +916,63 @@
         Pick your perfect flavor.
       </h2>
       <p>
-        From classic chocolate chip to sweet butterscotch
-        and cinnamon-rich snickerdoodle, there's a cookie
-        waiting for you.
+        From classic chocolate chip to sweet butterscotch,
+        cinnamon-rich snickerdoodle, and rich brownie,
+        there's a cookie waiting for you.
       </p>
     </div>
     <div class="flavor-grid">
       <div class="flavor-card">
-        <div class="flavor-icon">
-          🍪
-        </div>
-        <h3>
-          Oatmeal Raisin
-        </h3>
+        <div class="flavor-icon">🍪</div>
+        <h3>Oatmeal Raisin</h3>
         <p>
           Soft, chewy, and packed with classic oatmeal raisin flavor.
         </p>
       </div>
       <div class="flavor-card">
-        <div class="flavor-icon">
-          🍫
-        </div>
-        <h3>
-          Chocolate Chip
-        </h3>
+        <div class="flavor-icon">🍫</div>
+        <h3>Chocolate Chip</h3>
         <p>
           A timeless favorite loaded with delicious chocolate chips.
         </p>
       </div>
       <div class="flavor-card">
-        <div class="flavor-icon">
-          🤍
-        </div>
-        <h3>
-          White Chocolate
-        </h3>
+        <div class="flavor-icon">🤍</div>
+        <h3>White Chocolate</h3>
         <p>
           Sweet, creamy white chocolate in every bite.
         </p>
       </div>
       <div class="flavor-card">
-        <div class="flavor-icon">
-          🍯
-        </div>
-        <h3>
-          Butterscotch Chip
-        </h3>
+        <div class="flavor-icon">🍯</div>
+        <h3>Butterscotch Chip</h3>
         <p>
           Rich and buttery cookies with sweet butterscotch chips.
         </p>
       </div>
       <div class="flavor-card">
-        <div class="flavor-icon">
-          ✨
-        </div>
-        <h3>
-          Sugar
-        </h3>
+        <div class="flavor-icon">✨</div>
+        <h3>Sugar</h3>
         <p>
           Simple, sweet, soft, and delicious.
         </p>
       </div>
       <div class="flavor-card">
-        <div class="flavor-icon">
-          🍂
-        </div>
-        <h3>
-          Snickerdoodle
-        </h3>
+        <div class="flavor-icon">🍂</div>
+        <h3>Snickerdoodle</h3>
         <p>
           Soft, sweet cookies with a delicious cinnamon-sugar coating.
         </p>
       </div>
+      <div class="flavor-card">
+        <div class="flavor-icon">🍫</div>
+        <h3>Brownie</h3>
+        <p>
+          Rich, fudgy chocolate flavor with a soft brownie-style texture.
+        </p>
+      </div>
     </div>
   </section>
-  <!-- =========================
-       SHAPES
-  ========================= -->
   <section class="shapes-section" id="shapes">
     <div class="shape-container">
       <div class="section-header">
@@ -1061,36 +989,24 @@
       </div>
       <div class="shape-grid">
         <div class="shape-card">
-          <span class="shape-emoji">
-            🦖
-          </span>
-          <h3>
-            Dino Shape
-          </h3>
+          <span class="shape-emoji">🦖</span>
+          <h3>Dino Shape</h3>
           <p>
             Roar! Fun dinosaur-shaped cookies
             that are perfect for any occasion.
           </p>
         </div>
         <div class="shape-card">
-          <span class="shape-emoji">
-            🎀
-          </span>
-          <h3>
-            Bow Shape
-          </h3>
+          <span class="shape-emoji">🎀</span>
+          <h3>Bow Shape</h3>
           <p>
             Cute bow-shaped cookies for an
             extra-special treat.
           </p>
         </div>
         <div class="shape-card">
-          <span class="shape-emoji">
-            🍪
-          </span>
-          <h3>
-            Classic Round
-          </h3>
+          <span class="shape-emoji">🍪</span>
+          <h3>Classic Round</h3>
           <p>
             The classic cookie shape you know
             and love.
@@ -1099,9 +1015,6 @@
       </div>
     </div>
   </section>
-  <!-- =========================
-       PRICING
-  ========================= -->
   <section class="section" id="pricing">
     <div class="section-header">
       <div class="eyebrow">
@@ -1118,9 +1031,7 @@
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-content">
-          <h3>
-            12 Cookies
-          </h3>
+          <h3>12 Cookies</h3>
           <div class="price">
             $20
           </div>
@@ -1134,9 +1045,7 @@
           Best Value
         </div>
         <div class="price-content">
-          <h3>
-            24 Cookies
-          </h3>
+          <h3>24 Cookies</h3>
           <div class="price">
             $35
           </div>
@@ -1150,9 +1059,6 @@
       📦 Shipping costs are additional and are not included in the prices above.
     </p>
   </section>
-  <!-- =========================
-       PAYMENT
-  ========================= -->
   <section class="payment-section" id="payment">
     <div class="payment-container">
       <div class="eyebrow">
@@ -1165,7 +1071,6 @@
         We currently accept Cash App and Venmo.
       </p>
       <div class="payment-options">
-        <!-- CASH APP -->
         <div class="payment-card">
           <div class="payment-logo">
             💚
@@ -1177,7 +1082,6 @@
             $TeighlorElisabeth
           </div>
         </div>
-        <!-- VENMO -->
         <div class="payment-card">
           <div class="payment-logo">
             💙
@@ -1199,9 +1103,6 @@
       </div>
     </div>
   </section>
-  <!-- =========================
-       ORDER FORM
-  ========================= -->
   <section class="section order-section" id="order">
     <div class="order-container">
       <div class="section-header">
@@ -1216,14 +1117,12 @@
           to confirm the details.
         </p>
       </div>
-      <!-- FORMSUBMIT -->
       <form
         class="order-form"
         id="orderForm"
         action="https://formsubmit.co/Teighlorelisabeth2004@gmail.com"
         method="POST"
       >
-        <!-- FormSubmit settings -->
         <input
           type="hidden"
           name="_subject"
@@ -1239,7 +1138,6 @@
           name="_captcha"
           value="true"
         >
-        <!-- This hidden field will contain the customer's complete cookie selection -->
         <input
           type="hidden"
           name="cookie_selection"
@@ -1249,7 +1147,6 @@
         <div class="form-title">
           🍪 Your Order Details
         </div>
-        <!-- NAME + EMAIL -->
         <div class="form-row">
           <div class="form-group">
             <label for="name">
@@ -1278,7 +1175,6 @@
             >
           </div>
         </div>
-        <!-- PHONE -->
         <div class="form-group">
           <label for="phone">
             Phone Number
@@ -1294,7 +1190,6 @@
             Optional — provide this if you'd like to be contacted by text.
           </p>
         </div>
-        <!-- COOKIE BOX -->
         <div class="form-group">
           <label for="box">
             Cookie Box <span class="required">*</span>
@@ -1315,7 +1210,6 @@
             </option>
           </select>
         </div>
-        <!-- COOKIE PICKER -->
         <div class="cookie-picker">
           <div class="cookie-picker-header">
             <div>
@@ -1340,7 +1234,6 @@
             ></div>
           </div>
           <div class="cookie-picker-grid">
-            <!-- OATMEAL RAISIN -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1386,7 +1279,6 @@
                 </button>
               </div>
             </div>
-            <!-- CHOCOLATE CHIP -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1432,7 +1324,6 @@
                 </button>
               </div>
             </div>
-            <!-- WHITE CHOCOLATE -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1478,7 +1369,6 @@
                 </button>
               </div>
             </div>
-            <!-- BUTTERSCOTCH CHIP -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1524,7 +1414,6 @@
                 </button>
               </div>
             </div>
-            <!-- SUGAR -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1570,7 +1459,6 @@
                 </button>
               </div>
             </div>
-            <!-- SNICKERDOODLE -->
             <div class="cookie-choice">
               <div class="cookie-choice-top">
                 <div class="cookie-choice-icon">
@@ -1616,8 +1504,53 @@
                 </button>
               </div>
             </div>
+            <!-- BROWNIE -->
+            <div class="cookie-choice">
+              <div class="cookie-choice-top">
+                <div class="cookie-choice-icon">
+                  🍫
+                </div>
+                <div>
+                  <div class="cookie-choice-name">
+                    Brownie
+                  </div>
+                  <div
+                    class="cookie-choice-count"
+                    id="count-brownie"
+                  >
+                    0 selected
+                  </div>
+                </div>
+              </div>
+              <div class="quantity-controls">
+                <button
+                  type="button"
+                  class="quantity-button"
+                  data-flavor="Brownie"
+                  data-action="decrease"
+                  aria-label="Remove Brownie cookie"
+                  disabled
+                >
+                  −
+                </button>
+                <span
+                  class="quantity-number"
+                  id="quantity-brownie"
+                >
+                  0
+                </span>
+                <button
+                  type="button"
+                  class="quantity-button"
+                  data-flavor="Brownie"
+                  data-action="increase"
+                  aria-label="Add Brownie cookie"
+                >
+                  +
+                </button>
+              </div>
+            </div>
           </div>
-          <!-- SELECTION SUMMARY -->
           <div class="selection-summary">
             <div class="selection-summary-title">
               Your Cookie Selection
@@ -1638,7 +1571,6 @@
             Select your cookie box above, then choose your cookies.
           </div>
         </div>
-        <!-- SHAPE -->
         <div class="form-group">
           <label for="shape">
             Cookie Shape <span class="required">*</span>
@@ -1662,7 +1594,6 @@
             </option>
           </select>
         </div>
-        <!-- PAYMENT -->
         <div class="form-group">
           <label for="payment_method">
             Preferred Payment Method <span class="required">*</span>
@@ -1683,7 +1614,6 @@
             </option>
           </select>
         </div>
-        <!-- DELIVERY -->
         <div class="form-group">
           <label for="delivery">
             Pickup or Shipping <span class="required">*</span>
@@ -1704,7 +1634,6 @@
             </option>
           </select>
         </div>
-        <!-- SHIPPING ADDRESS -->
         <div class="form-group">
           <label for="address">
             Shipping Address
@@ -1715,7 +1644,6 @@
             placeholder="Enter your shipping address if you selected shipping"
           ></textarea>
         </div>
-        <!-- NOTES -->
         <div class="form-group">
           <label for="notes">
             Additional Notes
@@ -1726,7 +1654,6 @@
             placeholder="Special requests or other order details..."
           ></textarea>
         </div>
-        <!-- SUBMIT -->
         <button
           type="submit"
           class="submit-button"
@@ -1744,9 +1671,6 @@
       </form>
     </div>
   </section>
-  <!-- =========================
-       FOOTER
-  ========================= -->
   <footer>
     <div class="footer-logo">
       🍪 Fresh Homemade Cookies
@@ -1758,15 +1682,7 @@
       © 2026 Cookie Shop • All rights reserved.
     </p>
   </footer>
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
   <script>
-    /*
-      ============================================
-      COOKIE PICKER
-      ============================================
-    */
     const box = document.getElementById("box");
     const cookieSelection = document.getElementById("cookieSelection");
     const cookieCounter = document.getElementById("cookieCounter");
@@ -1781,7 +1697,8 @@
       "White Chocolate": 0,
       "Butterscotch Chip": 0,
       "Sugar": 0,
-      "Snickerdoodle": 0
+      "Snickerdoodle": 0,
+      "Brownie": 0
     };
     const flavorIds = {
       "Oatmeal Raisin": "oatmeal",
@@ -1789,7 +1706,8 @@
       "White Chocolate": "white",
       "Butterscotch Chip": "butterscotch",
       "Sugar": "sugar",
-      "Snickerdoodle": "snickerdoodle"
+      "Snickerdoodle": "snickerdoodle",
+      "Brownie": "brownie"
     };
     function getTargetCookies() {
       if (box.value === "12 Cookies - $20") {
@@ -1855,9 +1773,6 @@
             `${quantity} selected`;
         }
       });
-      /*
-        Enable/disable + and − buttons.
-      */
       document.querySelectorAll(".quantity-button").forEach(button => {
         const flavor = button.dataset.flavor;
         const action = button.dataset.action;
@@ -1870,9 +1785,6 @@
             total >= target;
         }
       });
-      /*
-        Build the order summary.
-      */
       summaryItems.innerHTML = "";
       const selectedFlavors = Object.entries(flavors)
         .filter(([flavor, quantity]) => quantity > 0);
@@ -1885,21 +1797,16 @@
         selectedFlavors.forEach(([flavor, quantity]) => {
           const item = document.createElement("span");
           item.className = "summary-item";
-          item.textContent = `${flavor} × ${quantity}`;
+          item.textContent =
+            `${flavor} × ${quantity}`;
           summaryItems.appendChild(item);
         });
       }
-      /*
-        Save selection into the hidden FormSubmit field.
-      */
       cookieSelection.value = selectedFlavors
         .map(([flavor, quantity]) => `${flavor} × ${quantity}`)
         .join(", ");
       updateSubmitButton();
     }
-    /*
-      Add / remove cookie buttons.
-    */
     document.querySelectorAll(".quantity-button").forEach(button => {
       button.addEventListener("click", () => {
         const flavor = button.dataset.flavor;
@@ -1924,10 +1831,6 @@
         updateCookiePicker();
       });
     });
-    /*
-      If the customer changes from 24 cookies to 12,
-      automatically remove the extra cookies.
-    */
     box.addEventListener("change", () => {
       const target = getTargetCookies();
       let total = getTotalCookies();
@@ -1945,11 +1848,6 @@
       }
       updateCookiePicker();
     });
-    /*
-      ============================================
-      SHIPPING ADDRESS
-      ============================================
-    */
     const delivery =
       document.getElementById("delivery");
     const address =
@@ -1971,11 +1869,6 @@
       updateAddress
     );
     updateAddress();
-    /*
-      ============================================
-      FORM VALIDATION / SUBMIT BUTTON
-      ============================================
-    */
     function updateSubmitButton() {
       const target = getTargetCookies();
       const total = getTotalCookies();
@@ -2026,9 +1919,6 @@
         }
       }
     }
-    /*
-      Watch the form fields.
-    */
     document.querySelectorAll(
       "#orderForm input, #orderForm select, #orderForm textarea"
     ).forEach(field => {
@@ -2041,9 +1931,6 @@
         updateSubmitButton
       );
     });
-    /*
-      Final safety check before FormSubmit.
-    */
     orderForm.addEventListener("submit", event => {
       const target = getTargetCookies();
       const total = getTotalCookies();
@@ -2058,19 +1945,12 @@
         updateCookiePicker();
         return;
       }
-      /*
-        Make sure the hidden field is completely updated
-        before the form is sent to FormSubmit.
-      */
       const selectedFlavors = Object.entries(flavors)
         .filter(([flavor, quantity]) => quantity > 0);
       cookieSelection.value = selectedFlavors
         .map(([flavor, quantity]) => `${flavor} × ${quantity}`)
         .join(", ");
     });
-    /*
-      Initial state.
-    */
     updateCookiePicker();
     updateSubmitButton();
   </script>
