@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
   >
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
     :root {
       --brown-dark: #3a2118;
       --brown: #6b3d28;
@@ -25,14 +27,17 @@
       --border: #ead7c5;
       --shadow: 0 15px 40px rgba(76, 42, 25, 0.12);
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: "DM Sans", Arial, sans-serif;
       background: var(--cream);
@@ -40,6 +45,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     nav {
       position: sticky;
       top: 0;
@@ -48,6 +54,7 @@
       backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(234, 215, 197, 0.8);
     }
+
     .nav-container {
       max-width: 1200px;
       margin: auto;
@@ -56,6 +63,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .logo {
       font-family: "Playfair Display", serif;
       font-size: 25px;
@@ -63,11 +71,13 @@
       color: var(--brown-dark);
       text-decoration: none;
     }
+
     .nav-links {
       display: flex;
       gap: 28px;
       list-style: none;
     }
+
     .nav-links a {
       color: var(--text);
       text-decoration: none;
@@ -75,18 +85,22 @@
       font-size: 14px;
       transition: 0.2s;
     }
+
     .nav-links a:hover {
       color: var(--brown-light);
     }
+
     .nav-order {
       background: var(--brown-dark);
       color: white !important;
       padding: 10px 18px;
       border-radius: 100px;
     }
+
     .nav-order:hover {
       background: var(--brown) !important;
     }
+
     .hero {
       min-height: 700px;
       position: relative;
@@ -98,6 +112,7 @@
         radial-gradient(circle at 15% 80%, rgba(255,214,174,.55), transparent 30%),
         linear-gradient(135deg, #f9e2ca, #fff8ed 55%, #f4d8bc);
     }
+
     .hero::before {
       content: "🍪";
       position: absolute;
@@ -107,6 +122,7 @@
       opacity: .14;
       transform: rotate(15deg);
     }
+
     .hero::after {
       content: "🍪";
       position: absolute;
@@ -116,6 +132,7 @@
       opacity: .12;
       transform: rotate(-20deg);
     }
+
     .hero-container {
       width: 100%;
       max-width: 1200px;
@@ -124,9 +141,11 @@
       position: relative;
       z-index: 2;
     }
+
     .hero-content {
       max-width: 700px;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -141,6 +160,7 @@
       box-shadow: 0 8px 20px rgba(70, 40, 20, .08);
       margin-bottom: 22px;
     }
+
     .hero h1 {
       font-family: "Playfair Display", serif;
       font-size: clamp(50px, 8vw, 86px);
@@ -149,20 +169,24 @@
       color: var(--brown-dark);
       margin-bottom: 25px;
     }
+
     .hero h1 span {
       color: var(--brown-light);
     }
+
     .hero p {
       max-width: 600px;
       font-size: 20px;
       color: var(--muted);
       margin-bottom: 35px;
     }
+
     .hero-buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
+
     .button {
       display: inline-flex;
       justify-content: center;
@@ -173,35 +197,42 @@
       font-weight: 700;
       transition: .25s;
     }
+
     .button-primary {
       background: var(--brown-dark);
       color: white;
       box-shadow: 0 10px 25px rgba(58,33,24,.2);
     }
+
     .button-primary:hover {
       transform: translateY(-3px);
       background: var(--brown);
       box-shadow: 0 15px 30px rgba(58,33,24,.25);
     }
+
     .button-secondary {
       background: white;
       color: var(--brown-dark);
       border: 1px solid var(--border);
     }
+
     .button-secondary:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
     }
+
     .section {
       max-width: 1200px;
       margin: auto;
       padding: 100px 25px;
     }
+
     .section-header {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 50px;
     }
+
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -210,6 +241,7 @@
       color: var(--brown-light);
       margin-bottom: 10px;
     }
+
     .section h2 {
       font-family: "Playfair Display", serif;
       font-size: clamp(35px, 5vw, 52px);
@@ -217,15 +249,18 @@
       line-height: 1.15;
       margin-bottom: 15px;
     }
+
     .section-header p {
       color: var(--muted);
       font-size: 17px;
     }
+
     .flavor-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
+
     .flavor-card {
       background: white;
       border: 1px solid var(--border);
@@ -237,6 +272,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .flavor-card::before {
       content: "";
       position: absolute;
@@ -248,13 +284,16 @@
       transform: scaleX(0);
       transition: .3s;
     }
+
     .flavor-card:hover {
       transform: translateY(-9px);
       box-shadow: var(--shadow);
     }
+
     .flavor-card:hover::before {
       transform: scaleX(1);
     }
+
     .flavor-icon {
       width: 90px;
       height: 90px;
@@ -266,29 +305,35 @@
       background: var(--cream-dark);
       font-size: 45px;
     }
+
     .flavor-card h3 {
       font-family: "Playfair Display", serif;
       font-size: 21px;
       margin-bottom: 7px;
     }
+
     .flavor-card p {
       color: var(--muted);
       font-size: 14px;
     }
+
     .shapes-section {
       background: #f4e4d2;
       max-width: none;
     }
+
     .shape-container {
       max-width: 1200px;
       margin: auto;
       padding: 100px 25px;
     }
+
     .shape-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
+
     .shape-card {
       background: white;
       border-radius: 28px;
@@ -298,23 +343,28 @@
       transition: .3s;
       box-shadow: 0 10px 30px rgba(75, 42, 25, .07);
     }
+
     .shape-card:hover {
       transform: translateY(-8px);
       border-color: #d7a47e;
     }
+
     .shape-emoji {
       font-size: 75px;
       margin-bottom: 15px;
       display: block;
     }
+
     .shape-card h3 {
       font-family: "Playfair Display", serif;
       font-size: 27px;
       margin-bottom: 7px;
     }
+
     .shape-card p {
       color: var(--muted);
     }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -322,6 +372,7 @@
       margin: auto;
       gap: 25px;
     }
+
     .price-card {
       background: white;
       border: 1px solid var(--border);
@@ -333,12 +384,15 @@
       overflow: hidden;
       transition: .3s;
     }
+
     .price-card:hover {
       transform: translateY(-7px);
     }
+
     .price-card.featured {
       border: 2px solid var(--brown-light);
     }
+
     .popular {
       position: absolute;
       top: 0;
@@ -352,14 +406,17 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+
     .price-card.featured .price-content {
       padding-top: 20px;
     }
+
     .price-card h3 {
       font-family: "Playfair Display", serif;
       font-size: 29px;
       margin-bottom: 10px;
     }
+
     .price {
       font-family: "Playfair Display", serif;
       font-size: 60px;
@@ -368,15 +425,18 @@
       line-height: 1;
       margin: 15px 0;
     }
+
     .price-card p {
       color: var(--muted);
     }
+
     .price-note {
       text-align: center;
       margin-top: 25px;
       color: var(--muted);
       font-size: 15px;
     }
+
     .payment-section {
       background:
         radial-gradient(circle at 10% 30%, rgba(255,255,255,.1), transparent 25%),
@@ -385,24 +445,29 @@
       color: white;
       padding: 100px 25px;
     }
+
     .payment-container {
       max-width: 1000px;
       margin: auto;
       text-align: center;
     }
+
     .payment-container .eyebrow {
       color: #e9b48d;
     }
+
     .payment-container h2 {
       font-family: "Playfair Display", serif;
       font-size: clamp(38px, 5vw, 55px);
       margin-bottom: 15px;
     }
+
     .payment-container > p {
       color: #d8c3b8;
       font-size: 18px;
       margin-bottom: 40px;
     }
+
     .payment-options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -410,6 +475,7 @@
       max-width: 700px;
       margin: auto;
     }
+
     .payment-card {
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.14);
@@ -418,18 +484,22 @@
       backdrop-filter: blur(10px);
       transition: .3s;
     }
+
     .payment-card:hover {
       transform: translateY(-5px);
       background: rgba(255,255,255,.12);
     }
+
     .payment-logo {
       font-size: 38px;
       margin-bottom: 8px;
     }
+
     .payment-card h3 {
       font-size: 21px;
       margin-bottom: 7px;
     }
+
     .payment-handle {
       display: inline-block;
       background: white;
@@ -439,6 +509,7 @@
       font-weight: 800;
       margin-top: 8px;
     }
+
     .payment-warning {
       max-width: 760px;
       margin: 35px auto 0;
@@ -449,13 +520,16 @@
       color: #f9dec6;
       font-size: 15px;
     }
+
     .order-section {
       background: #fffdf9;
     }
+
     .order-container {
       max-width: 850px;
       margin: auto;
     }
+
     .order-form {
       background: white;
       border: 1px solid var(--border);
@@ -463,29 +537,35 @@
       padding: 45px;
       box-shadow: var(--shadow);
     }
+
     .form-title {
       font-family: "Playfair Display", serif;
       font-size: 28px;
       margin-bottom: 25px;
       color: var(--brown-dark);
     }
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
+
     .form-group {
       margin-bottom: 20px;
     }
+
     label {
       display: block;
       font-weight: 700;
       margin-bottom: 7px;
       font-size: 14px;
     }
+
     .required {
       color: #d32f2f;
     }
+
     input,
     select,
     textarea {
@@ -500,21 +580,25 @@
       outline: none;
       transition: .2s;
     }
+
     input:focus,
     select:focus,
     textarea:focus {
       border-color: var(--brown-light);
       box-shadow: 0 0 0 4px rgba(154,91,59,.1);
     }
+
     textarea {
       min-height: 120px;
       resize: vertical;
     }
+
     .form-note {
       font-size: 12px;
       color: var(--muted);
       margin-top: 5px;
     }
+
     .cookie-picker {
       background: #fffaf4;
       border: 1px solid var(--border);
@@ -522,6 +606,7 @@
       padding: 22px;
       margin-bottom: 25px;
     }
+
     .cookie-picker-header {
       display: flex;
       justify-content: space-between;
@@ -530,16 +615,19 @@
       margin-bottom: 18px;
       flex-wrap: wrap;
     }
+
     .cookie-picker-title {
       font-family: "Playfair Display", serif;
       font-size: 23px;
       color: var(--brown-dark);
     }
+
     .cookie-picker-help {
       color: var(--muted);
       font-size: 13px;
       margin-top: 3px;
     }
+
     .cookie-counter {
       background: var(--brown-dark);
       color: white;
@@ -549,9 +637,11 @@
       font-weight: 800;
       white-space: nowrap;
     }
+
     .cookie-counter.complete {
       background: var(--green-dark);
     }
+
     .cookie-progress {
       width: 100%;
       height: 9px;
@@ -560,6 +650,7 @@
       overflow: hidden;
       margin-bottom: 20px;
     }
+
     .cookie-progress-bar {
       width: 0%;
       height: 100%;
@@ -567,14 +658,17 @@
       border-radius: 100px;
       transition: width .25s ease;
     }
+
     .cookie-progress-bar.complete {
       background: var(--green);
     }
+
     .cookie-picker-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
+
     .cookie-choice {
       background: white;
       border: 1px solid var(--border);
@@ -582,16 +676,19 @@
       padding: 15px;
       transition: .2s;
     }
+
     .cookie-choice:hover {
       border-color: #c99b7b;
       box-shadow: 0 7px 20px rgba(75, 42, 25, .07);
     }
+
     .cookie-choice-top {
       display: flex;
       align-items: center;
       gap: 11px;
       margin-bottom: 13px;
     }
+
     .cookie-choice-icon {
       width: 48px;
       height: 48px;
@@ -603,20 +700,24 @@
       font-size: 25px;
       flex-shrink: 0;
     }
+
     .cookie-choice-name {
       font-weight: 800;
       font-size: 14px;
     }
+
     .cookie-choice-count {
       color: var(--muted);
       font-size: 12px;
     }
+
     .quantity-controls {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
     }
+
     .quantity-button {
       width: 40px;
       height: 40px;
@@ -629,15 +730,18 @@
       cursor: pointer;
       transition: .2s;
     }
+
     .quantity-button:hover:not(:disabled) {
       background: var(--brown-dark);
       color: white;
       transform: scale(1.05);
     }
+
     .quantity-button:disabled {
       opacity: .4;
       cursor: not-allowed;
     }
+
     .quantity-number {
       min-width: 40px;
       text-align: center;
@@ -645,6 +749,7 @@
       font-weight: 800;
       color: var(--brown-dark);
     }
+
     .selection-summary {
       margin-top: 18px;
       padding: 15px;
@@ -652,6 +757,7 @@
       background: white;
       border: 1px dashed #d9bea7;
     }
+
     .selection-summary-title {
       font-size: 12px;
       font-weight: 800;
@@ -660,11 +766,13 @@
       color: var(--muted);
       margin-bottom: 9px;
     }
+
     .summary-items {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
     }
+
     .summary-item {
       background: var(--cream-dark);
       color: var(--brown-dark);
@@ -673,19 +781,23 @@
       font-size: 12px;
       font-weight: 700;
     }
+
     .summary-empty {
       color: var(--muted);
       font-size: 13px;
     }
+
     .picker-message {
       margin-top: 12px;
       font-size: 13px;
       font-weight: 700;
       color: var(--brown-light);
     }
+
     .picker-message.complete {
       color: var(--green-dark);
     }
+
     .submit-button {
       width: 100%;
       border: none;
@@ -700,28 +812,33 @@
       transition: .25s;
       margin-top: 5px;
     }
+
     .submit-button:hover:not(:disabled) {
       background: var(--brown);
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(58,33,24,.2);
     }
+
     .submit-button:disabled {
       background: #b9a79c;
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
     }
+
     .form-disclaimer {
       text-align: center;
       font-size: 12px;
       color: var(--muted);
       margin-top: 17px;
     }
+
     .info-strip {
       background: var(--brown-light);
       color: white;
       padding: 25px;
     }
+
     .info-grid {
       max-width: 1100px;
       margin: auto;
@@ -730,127 +847,161 @@
       gap: 20px;
       text-align: center;
     }
+
     .info-item {
       padding: 10px;
     }
+
     .info-item span {
       display: block;
       font-size: 27px;
       margin-bottom: 3px;
     }
+
     .info-item strong {
       display: block;
       font-size: 15px;
     }
+
     .info-item small {
       color: #f9dfcc;
     }
+
     footer {
       background: var(--brown-dark);
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
+
     footer .footer-logo {
       font-family: "Playfair Display", serif;
       font-size: 28px;
       margin-bottom: 8px;
     }
+
     footer p {
       color: #cdb8ad;
       font-size: 13px;
     }
+
     @media (max-width: 950px) {
       .flavor-grid {
         grid-template-columns: repeat(3, 1fr);
       }
+
       .hero {
         min-height: 620px;
       }
     }
+
     @media (max-width: 700px) {
       .nav-container {
         padding: 13px 17px;
       }
+
       .nav-links {
         display: none;
       }
+
       .logo {
         font-size: 21px;
       }
+
       .hero {
         min-height: 620px;
       }
+
       .hero-container {
         padding: 70px 20px;
       }
+
       .hero h1 {
         font-size: 53px;
         letter-spacing: -2px;
       }
+
       .hero p {
         font-size: 17px;
       }
+
       .hero::before {
         font-size: 150px;
         right: -30px;
         top: 10%;
       }
+
       .section,
       .shape-container {
         padding: 70px 18px;
       }
+
       .flavor-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .shape-grid {
         grid-template-columns: 1fr;
       }
+
       .pricing-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
       }
+
       .payment-options {
         grid-template-columns: 1fr;
       }
+
       .form-row {
         grid-template-columns: 1fr;
         gap: 0;
       }
+
       .order-form {
         padding: 25px 20px;
       }
+
       .info-grid {
         grid-template-columns: 1fr;
         gap: 8px;
       }
+
       .cookie-picker-grid {
         grid-template-columns: 1fr;
       }
     }
+
     @media (max-width: 420px) {
       .flavor-grid {
         grid-template-columns: 1fr;
       }
+
       .hero h1 {
         font-size: 45px;
       }
+
       .hero-buttons {
         flex-direction: column;
       }
+
       .button {
         width: 100%;
       }
+
       .cookie-picker {
         padding: 17px;
       }
     }
   </style>
 </head>
+
 <body>
+
   <nav>
     <div class="nav-container">
       <a href="#" class="logo">🍪 Cookie Shop</a>
+
       <ul class="nav-links">
         <li><a href="#flavors">Flavors</a></li>
         <li><a href="#shapes">Shapes</a></li>
@@ -862,25 +1013,30 @@
       </ul>
     </div>
   </nav>
+
   <header class="hero">
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
           🍪 Fresh • Homemade • Made to Order
         </div>
+
         <h1>
           Cookies made<br>
           <span>just for you.</span>
         </h1>
+
         <p>
           Choose your favorite flavors, pick a fun shape,
           and get a box of delicious homemade cookies made
           especially for your order.
         </p>
+
         <div class="hero-buttons">
           <a href="#order" class="button button-primary">
             🍪 Order Cookies
           </a>
+
           <a href="#flavors" class="button button-secondary">
             Explore Flavors →
           </a>
@@ -888,40 +1044,53 @@
       </div>
     </div>
   </header>
+
   <section class="info-strip">
     <div class="info-grid">
+
       <div class="info-item">
         <span>🍪</span>
         <strong>7 Delicious Flavors</strong>
         <small>Something for everyone</small>
       </div>
+
       <div class="info-item">
         <span>✨</span>
         <strong>3 Cookie Shapes</strong>
         <small>Make your order unique</small>
       </div>
+
       <div class="info-item">
         <span>📦</span>
         <strong>12 or 24 Cookies</strong>
         <small>Shipping available</small>
       </div>
+
     </div>
   </section>
+
   <section class="section" id="flavors">
+
     <div class="section-header">
+
       <div class="eyebrow">
         Our Menu
       </div>
+
       <h2>
         Pick your perfect flavor.
       </h2>
+
       <p>
         From classic chocolate chip to sweet butterscotch,
         cinnamon-rich snickerdoodle, and rich brownie,
         there's a cookie waiting for you.
       </p>
+
     </div>
+
     <div class="flavor-grid">
+
       <div class="flavor-card">
         <div class="flavor-icon">🍪</div>
         <h3>Oatmeal Raisin</h3>
@@ -929,6 +1098,7 @@
           Soft, chewy, and packed with classic oatmeal raisin flavor.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">🍫</div>
         <h3>Chocolate Chip</h3>
@@ -936,6 +1106,7 @@
           A timeless favorite loaded with delicious chocolate chips.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">🤍</div>
         <h3>White Chocolate</h3>
@@ -943,6 +1114,7 @@
           Sweet, creamy white chocolate in every bite.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">🍯</div>
         <h3>Butterscotch Chip</h3>
@@ -950,6 +1122,7 @@
           Rich and buttery cookies with sweet butterscotch chips.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">✨</div>
         <h3>Sugar</h3>
@@ -957,6 +1130,7 @@
           Simple, sweet, soft, and delicious.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">🍂</div>
         <h3>Snickerdoodle</h3>
@@ -964,6 +1138,7 @@
           Soft, sweet cookies with a delicious cinnamon-sugar coating.
         </p>
       </div>
+
       <div class="flavor-card">
         <div class="flavor-icon">🍫</div>
         <h3>Brownie</h3>
@@ -971,23 +1146,33 @@
           Rich, fudgy chocolate flavor with a soft brownie-style texture.
         </p>
       </div>
+
     </div>
   </section>
+
   <section class="shapes-section" id="shapes">
+
     <div class="shape-container">
+
       <div class="section-header">
+
         <div class="eyebrow">
           Make It Yours
         </div>
+
         <h2>
           Choose your shape.
         </h2>
+
         <p>
           Your cookies don't have to be ordinary.
           Pick the shape that fits your style!
         </p>
+
       </div>
+
       <div class="shape-grid">
+
         <div class="shape-card">
           <span class="shape-emoji">🦖</span>
           <h3>Dino Shape</h3>
@@ -996,6 +1181,7 @@
             that are perfect for any occasion.
           </p>
         </div>
+
         <div class="shape-card">
           <span class="shape-emoji">🎀</span>
           <h3>Bow Shape</h3>
@@ -1004,6 +1190,7 @@
             extra-special treat.
           </p>
         </div>
+
         <div class="shape-card">
           <span class="shape-emoji">🍪</span>
           <h3>Classic Round</h3>
@@ -1012,88 +1199,126 @@
             and love.
           </p>
         </div>
+
       </div>
     </div>
   </section>
+
   <section class="section" id="pricing">
+
     <div class="section-header">
+
       <div class="eyebrow">
         Simple Pricing
       </div>
+
       <h2>
         Choose your box.
       </h2>
+
       <p>
         Pick a size, choose your flavors and shape,
         and you're ready to order.
       </p>
+
     </div>
+
     <div class="pricing-grid">
+
       <div class="price-card">
+
         <div class="price-content">
+
           <h3>12 Cookies</h3>
+
           <div class="price">
             $20
           </div>
+
           <p>
             A dozen delicious homemade cookies.
           </p>
+
         </div>
       </div>
+
       <div class="price-card featured">
+
         <div class="popular">
           Best Value
         </div>
+
         <div class="price-content">
+
           <h3>24 Cookies</h3>
+
           <div class="price">
             $35
           </div>
+
           <p>
             Double the cookies for an even better value.
           </p>
+
         </div>
       </div>
+
     </div>
+
     <p class="price-note">
       📦 Shipping costs are additional and are not included in the prices above.
     </p>
+
   </section>
+
   <section class="payment-section" id="payment">
+
     <div class="payment-container">
+
       <div class="eyebrow">
         Easy Payment
       </div>
+
       <h2>
         Pay your way.
       </h2>
+
       <p>
         We currently accept Cash App and Venmo.
       </p>
+
       <div class="payment-options">
+
         <div class="payment-card">
           <div class="payment-logo">
             💚
           </div>
+
           <h3>
             Cash App
           </h3>
+
           <div class="payment-handle">
             $TeighlorElisabeth
           </div>
         </div>
+
         <div class="payment-card">
           <div class="payment-logo">
             💙
           </div>
+
           <h3>
             Venmo
           </h3>
+
           <div class="payment-handle">
             @Teighlor-Elisabeth2004
           </div>
         </div>
+
       </div>
+
       <div class="payment-warning">
         ⚠️ <strong>Important:</strong>
         Please do not send payment when submitting your order.
@@ -1101,57 +1326,75 @@
         You will then receive an email or text with your final total,
         shipping cost, and payment instructions.
       </div>
+
     </div>
   </section>
+
   <section class="section order-section" id="order">
+
     <div class="order-container">
+
       <div class="section-header">
+
         <div class="eyebrow">
           Let's Get Your Order Started
         </div>
+
         <h2>
           Place your order.
         </h2>
+
         <p>
           Fill out the form below and we'll contact you
           to confirm the details.
         </p>
+
       </div>
+
       <form
         class="order-form"
         id="orderForm"
         action="https://formsubmit.co/Teighlorelisabeth2004@gmail.com"
         method="POST"
       >
+
         <input
           type="hidden"
           name="_subject"
           value="New Cookie Order Request"
         >
+
         <input
           type="hidden"
           name="_template"
           value="table"
         >
+
         <input
           type="hidden"
           name="_captcha"
           value="true"
         >
+
         <input
           type="hidden"
           name="cookie_selection"
           id="cookieSelection"
           value=""
         >
+
         <div class="form-title">
           🍪 Your Order Details
         </div>
+
         <div class="form-row">
+
           <div class="form-group">
+
             <label for="name">
               Full Name <span class="required">*</span>
             </label>
+
             <input
               type="text"
               id="name"
@@ -1160,11 +1403,15 @@
               autocomplete="name"
               required
             >
+
           </div>
+
           <div class="form-group">
+
             <label for="email">
               Email Address <span class="required">*</span>
             </label>
+
             <input
               type="email"
               id="email"
@@ -1173,12 +1420,17 @@
               autocomplete="email"
               required
             >
+
           </div>
+
         </div>
+
         <div class="form-group">
+
           <label for="phone">
             Phone Number
           </label>
+
           <input
             type="tel"
             id="phone"
@@ -1186,72 +1438,104 @@
             placeholder="Optional phone number"
             autocomplete="tel"
           >
+
           <p class="form-note">
             Optional — provide this if you'd like to be contacted by text.
           </p>
+
         </div>
+
         <div class="form-group">
+
           <label for="box">
             Cookie Box <span class="required">*</span>
           </label>
+
           <select
             id="box"
             name="cookie_box"
             required
           >
+
             <option value="">
               Select your box
             </option>
+
             <option value="12 Cookies - $20">
               12 Cookies — $20
             </option>
+
             <option value="24 Cookies - $35">
               24 Cookies — $35
             </option>
+
           </select>
+
         </div>
+
         <div class="cookie-picker">
+
           <div class="cookie-picker-header">
+
             <div>
+
               <div class="cookie-picker-title">
                 🍪 Pick Your Cookies
               </div>
+
               <div class="cookie-picker-help">
                 Click + or − to choose exactly how many of each flavor you want.
               </div>
+
             </div>
+
             <div
               class="cookie-counter"
               id="cookieCounter"
             >
               0 / 12
             </div>
+
           </div>
+
           <div class="cookie-progress">
+
             <div
               class="cookie-progress-bar"
               id="cookieProgressBar"
             ></div>
+
           </div>
+
           <div class="cookie-picker-grid">
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🍪
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Oatmeal Raisin
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-oatmeal"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1262,12 +1546,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-oatmeal"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1277,26 +1563,37 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🍫
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Chocolate Chip
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-chocolate"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1307,12 +1604,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-chocolate"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1322,26 +1621,37 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🤍
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     White Chocolate
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-white"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1352,12 +1662,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-white"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1367,26 +1679,37 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🍯
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Butterscotch Chip
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-butterscotch"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1397,12 +1720,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-butterscotch"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1412,26 +1737,37 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   ✨
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Sugar
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-sugar"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1442,12 +1778,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-sugar"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1457,26 +1795,37 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🍂
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Snickerdoodle
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-snickerdoodle"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1487,12 +1836,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-snickerdoodle"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1502,27 +1853,38 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
             <!-- BROWNIE -->
             <div class="cookie-choice">
+
               <div class="cookie-choice-top">
+
                 <div class="cookie-choice-icon">
                   🍫
                 </div>
+
                 <div>
+
                   <div class="cookie-choice-name">
                     Brownie
                   </div>
+
                   <div
                     class="cookie-choice-count"
                     id="count-brownie"
                   >
                     0 selected
                   </div>
+
                 </div>
+
               </div>
+
               <div class="quantity-controls">
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1533,12 +1895,14 @@
                 >
                   −
                 </button>
+
                 <span
                   class="quantity-number"
                   id="quantity-brownie"
                 >
                   0
                 </span>
+
                 <button
                   type="button"
                   class="quantity-button"
@@ -1548,13 +1912,18 @@
                 >
                   +
                 </button>
+
               </div>
             </div>
+
           </div>
+
           <div class="selection-summary">
+
             <div class="selection-summary-title">
               Your Cookie Selection
             </div>
+
             <div
               class="summary-items"
               id="summaryItems"
@@ -1563,97 +1932,134 @@
                 No cookies selected yet.
               </span>
             </div>
+
           </div>
+
           <div
             class="picker-message"
             id="pickerMessage"
           >
             Select your cookie box above, then choose your cookies.
           </div>
+
         </div>
+
         <div class="form-group">
+
           <label for="shape">
             Cookie Shape <span class="required">*</span>
           </label>
+
           <select
             id="shape"
             name="cookie_shape"
             required
           >
+
             <option value="">
               Choose a shape
             </option>
+
             <option value="Dino Shape">
               🦖 Dino Shape
             </option>
+
             <option value="Bow Shape">
               🎀 Bow Shape
             </option>
+
             <option value="Classic Round">
               🍪 Classic Round
             </option>
+
           </select>
+
         </div>
+
         <div class="form-group">
+
           <label for="payment_method">
             Preferred Payment Method <span class="required">*</span>
           </label>
+
           <select
             id="payment_method"
             name="payment_method"
             required
           >
+
             <option value="">
               Choose payment method
             </option>
+
             <option value="Cash App">
               💚 Cash App
             </option>
+
             <option value="Venmo">
               💙 Venmo
             </option>
+
           </select>
+
         </div>
+
         <div class="form-group">
+
           <label for="delivery">
             Pickup or Shipping <span class="required">*</span>
           </label>
+
           <select
             id="delivery"
             name="delivery_method"
             required
           >
+
             <option value="">
               Choose an option
             </option>
+
             <option value="Pickup">
               📍 Pickup
             </option>
+
             <option value="Shipping">
               📦 Shipping
             </option>
+
           </select>
+
         </div>
+
         <div class="form-group">
+
           <label for="address">
             Shipping Address
           </label>
+
           <textarea
             id="address"
             name="shipping_address"
             placeholder="Enter your shipping address if you selected shipping"
           ></textarea>
+
         </div>
+
         <div class="form-group">
+
           <label for="notes">
             Additional Notes
           </label>
+
           <textarea
             id="notes"
             name="additional_notes"
             placeholder="Special requests or other order details..."
           ></textarea>
+
         </div>
+
         <button
           type="submit"
           class="submit-button"
@@ -1662,26 +2068,34 @@
         >
           🍪 Select Your Cookies First
         </button>
+
         <p class="form-disclaimer">
           By submitting this form, you are sending an order request.
           This does not automatically charge you.
           Please wait for confirmation before sending payment.
           Shipping costs are additional.
         </p>
+
       </form>
     </div>
   </section>
+
   <footer>
+
     <div class="footer-logo">
       🍪 Fresh Homemade Cookies
     </div>
+
     <p>
       Delicious cookies. Fun shapes. Made to order.
     </p>
+
     <p style="margin-top: 10px;">
       © 2026 Cookie Shop • All rights reserved.
     </p>
+
   </footer>
+
   <script>
     const box = document.getElementById("box");
     const cookieSelection = document.getElementById("cookieSelection");
@@ -1691,6 +2105,7 @@
     const pickerMessage = document.getElementById("pickerMessage");
     const orderForm = document.getElementById("orderForm");
     const submitButton = document.getElementById("submitButton");
+
     const flavors = {
       "Oatmeal Raisin": 0,
       "Chocolate Chip": 0,
@@ -1700,6 +2115,7 @@
       "Snickerdoodle": 0,
       "Brownie": 0
     };
+
     const flavorIds = {
       "Oatmeal Raisin": "oatmeal",
       "Chocolate Chip": "chocolate",
@@ -1709,250 +2125,373 @@
       "Snickerdoodle": "snickerdoodle",
       "Brownie": "brownie"
     };
+
     function getTargetCookies() {
       if (box.value === "12 Cookies - $20") {
         return 12;
       }
+
       if (box.value === "24 Cookies - $35") {
         return 24;
       }
+
       return 0;
     }
+
     function getTotalCookies() {
       return Object.values(flavors).reduce(
         (total, quantity) => total + quantity,
         0
       );
     }
+
     function updateCookiePicker() {
       const target = getTargetCookies();
       const total = getTotalCookies();
+
       cookieCounter.textContent =
         target > 0
           ? `${total} / ${target}`
           : `${total} / —`;
+
       if (target > 0) {
         const percentage = Math.min((total / target) * 100, 100);
         cookieProgressBar.style.width = `${percentage}%`;
       } else {
         cookieProgressBar.style.width = "0%";
       }
+
       if (target > 0 && total === target) {
+
         cookieCounter.classList.add("complete");
         cookieProgressBar.classList.add("complete");
+
         pickerMessage.textContent =
           `✓ Perfect! You selected all ${target} cookies.`;
+
         pickerMessage.classList.add("complete");
+
       } else {
+
         cookieCounter.classList.remove("complete");
         cookieProgressBar.classList.remove("complete");
         pickerMessage.classList.remove("complete");
+
         if (target === 0) {
+
           pickerMessage.textContent =
             "Select your cookie box above, then choose your cookies.";
+
         } else if (total === 0) {
+
           pickerMessage.textContent =
             `Choose ${target} cookies from the flavors below.`;
+
         } else if (total < target) {
+
           const remaining = target - total;
+
           pickerMessage.textContent =
             `Choose ${remaining} more cookie${remaining === 1 ? "" : "s"} to complete your box.`;
         }
       }
+
       Object.entries(flavors).forEach(([flavor, quantity]) => {
+
         const id = flavorIds[flavor];
+
         const quantityElement =
           document.getElementById(`quantity-${id}`);
+
         const countElement =
           document.getElementById(`count-${id}`);
+
         if (quantityElement) {
           quantityElement.textContent = quantity;
         }
+
         if (countElement) {
           countElement.textContent =
             `${quantity} selected`;
         }
+
       });
+
       document.querySelectorAll(".quantity-button").forEach(button => {
+
         const flavor = button.dataset.flavor;
         const action = button.dataset.action;
+
         if (action === "decrease") {
           button.disabled = flavors[flavor] <= 0;
         }
+
         if (action === "increase") {
           button.disabled =
             target === 0 ||
             total >= target;
         }
+
       });
+
       summaryItems.innerHTML = "";
+
       const selectedFlavors = Object.entries(flavors)
         .filter(([flavor, quantity]) => quantity > 0);
+
       if (selectedFlavors.length === 0) {
+
         const empty = document.createElement("span");
+
         empty.className = "summary-empty";
         empty.textContent = "No cookies selected yet.";
+
         summaryItems.appendChild(empty);
+
       } else {
+
         selectedFlavors.forEach(([flavor, quantity]) => {
+
           const item = document.createElement("span");
+
           item.className = "summary-item";
+
           item.textContent =
             `${flavor} × ${quantity}`;
+
           summaryItems.appendChild(item);
+
         });
       }
+
       cookieSelection.value = selectedFlavors
         .map(([flavor, quantity]) => `${flavor} × ${quantity}`)
         .join(", ");
+
       updateSubmitButton();
     }
+
     document.querySelectorAll(".quantity-button").forEach(button => {
+
       button.addEventListener("click", () => {
+
         const flavor = button.dataset.flavor;
         const action = button.dataset.action;
         const target = getTargetCookies();
         const total = getTotalCookies();
+
         if (action === "increase") {
+
           if (target === 0) {
             return;
           }
+
           if (total >= target) {
             return;
           }
+
           flavors[flavor]++;
         }
+
         if (action === "decrease") {
+
           if (flavors[flavor] <= 0) {
             return;
           }
+
           flavors[flavor]--;
         }
+
         updateCookiePicker();
       });
+
     });
+
     box.addEventListener("change", () => {
+
       const target = getTargetCookies();
+
       let total = getTotalCookies();
+
       if (target > 0 && total > target) {
+
         const flavorNames = Object.keys(flavors).reverse();
+
         for (const flavor of flavorNames) {
+
           while (
             flavors[flavor] > 0 &&
             total > target
           ) {
+
             flavors[flavor]--;
             total--;
+
           }
+
         }
       }
+
       updateCookiePicker();
     });
+
     const delivery =
       document.getElementById("delivery");
+
     const address =
       document.getElementById("address");
+
     function updateAddress() {
+
       if (delivery.value === "Shipping") {
+
         address.required = true;
+
         address.placeholder =
           "Enter your complete shipping address";
+
       } else {
+
         address.required = false;
+
         address.placeholder =
           "Enter your shipping address if you selected shipping";
+
       }
+
       updateSubmitButton();
     }
+
     delivery.addEventListener(
       "change",
       updateAddress
     );
+
     updateAddress();
+
     function updateSubmitButton() {
+
       const target = getTargetCookies();
       const total = getTotalCookies();
+
       const name =
         document.getElementById("name").value.trim();
+
       const email =
         document.getElementById("email").value.trim();
+
       const shape =
         document.getElementById("shape").value;
+
       const payment =
         document.getElementById("payment_method").value;
+
       const deliveryMethod =
         document.getElementById("delivery").value;
+
       const shippingAddress =
         document.getElementById("address").value.trim();
+
       const basicFieldsComplete =
         name.length > 0 &&
         email.length > 0 &&
         shape !== "" &&
         payment !== "" &&
         deliveryMethod !== "";
+
       const shippingComplete =
         deliveryMethod !== "Shipping" ||
         shippingAddress.length > 0;
+
       const cookiesComplete =
         target > 0 &&
         total === target;
+
       if (
         basicFieldsComplete &&
         shippingComplete &&
         cookiesComplete
       ) {
+
         submitButton.disabled = false;
+
         submitButton.textContent =
           `🍪 Submit My ${target}-Cookie Order`;
+
       } else {
+
         submitButton.disabled = true;
+
         if (target === 0) {
+
           submitButton.textContent =
             "🍪 Select Your Cookie Box";
+
         } else if (total < target) {
+
           const remaining = target - total;
+
           submitButton.textContent =
             `🍪 Choose ${remaining} More Cookie${remaining === 1 ? "" : "s"}`;
+
         } else {
+
           submitButton.textContent =
             "🍪 Complete Your Order Details";
         }
       }
     }
+
     document.querySelectorAll(
       "#orderForm input, #orderForm select, #orderForm textarea"
     ).forEach(field => {
+
       field.addEventListener(
         "input",
         updateSubmitButton
       );
+
       field.addEventListener(
         "change",
         updateSubmitButton
       );
+
     });
+
     orderForm.addEventListener("submit", event => {
+
       const target = getTargetCookies();
       const total = getTotalCookies();
+
       if (
         target === 0 ||
         total !== target
       ) {
+
         event.preventDefault();
+
         alert(
           `Please select exactly ${target || "the correct number of"} cookies before submitting your order.`
         );
+
         updateCookiePicker();
+
         return;
       }
+
       const selectedFlavors = Object.entries(flavors)
         .filter(([flavor, quantity]) => quantity > 0);
+
       cookieSelection.value = selectedFlavors
         .map(([flavor, quantity]) => `${flavor} × ${quantity}`)
         .join(", ");
+
     });
+
     updateCookiePicker();
     updateSubmitButton();
   </script>
+
 </body>
 </html>
+```
